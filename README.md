@@ -1,8 +1,9 @@
 # jetbrain-academy-python-project_zoo-keeper
-A python program that provides the information of animals in zoo (provided in data-set), through interactive mode.
+One of the project in python programming from Jetbrains Academy curriculum. 
+that provides the information of the animals in zoo (provided in data-set), through interactive mode.
 
 <b>About</b><br>
-This short code project can help the local zoo look after its denizens. You will create a tool for monitoring animals and their status.
+This short code project can help the local zoo look after its denizens. It will provide us a tool for monitoring animals and their status.
 
 
 <b>Learning outcomes</b><br>
