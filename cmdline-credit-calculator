@@ -1,0 +1,42 @@
+import math
+choice = input("""What do you want to calculate? 
+type "n" - for count of months, 
+type "a" - for annuity monthly payment,
+type "p" - for credit principal: """)
+if choice == "n":
+    P = int(input("Enter credit principal: "))
+    A = int(input("Enter monthly payment: "))
+    interest = float(input("Enter credit interest: "))
+    i = interest / 1200
+    base = 1 + i
+    x = (A / (A - i * P))
+    n = math.log(x) / math.log(base)
+    if round(n) > n:
+        n = round(n)
+    else:
+        n = round(n) + 1
+    Y, M = n // 12, n % 12
+    yplural = "years" if Y > 1 else "year"
+    mplural = "months" if M > 1 else "month"
+    if Y >= 1 and M >= 1:
+        print(f"You need {Y} {yplural} and {M} {mplural} to repay this credit!")
+    elif Y >= 1 and M == 0:
+        print(f"You need {Y} {yplural} to repay this credit!")
+    else:
+        print(f"You need {M} {mplural} to repay this credit!")
+elif choice == "a":
+    P = int(input("Enter credit principal: "))
+    n = int(input("Enter count of periods: "))
+    interest = float(input("Enter credit interest: "))
+    i = interest / 1200
+    A = P * ((i * math.pow((1 + i), n)) / (math.pow((1 + i), n) - 1))
+    if type(A) is float:
+        A = int(A) + 1
+    print("Your annuity payment =", A, "!")
+elif choice == "p":
+    A = float(input("Enter monthly payment: "))
+    n = int(input("Enter count of periods: "))
+    interest = float(input("Enter credit interest: "))
+    i = interest / 1200
+    P = round(A / ((i * math.pow((1 + i), n)) / (math.pow((1 + i), n) - 1)))
+    print("Your credit principal =", P, "!")
